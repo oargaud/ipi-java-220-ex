@@ -41,6 +41,21 @@ public class Employe
         return anciennete;
     }
 
+    public Integer getNbConges()
+    {
+
+        return Entreprise.NB_CONGES_BASE;
+    }
+
+    public String toString()
+    {
+        return "Employe{nom='"+this.nom+
+                "', prenom='"+this.prenom+
+                "', matricule='"+this.matricule+
+                "', dateEmbauche="+this.dateEmbauche.toString()+
+                ", salaire="+ this.salaire+"}";
+    }
+
 
     public String getNom() {
         return nom;
