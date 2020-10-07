@@ -33,12 +33,15 @@ public class Employe
 
     public final Integer getNombreAnneeAnciennete()
     {
+        /*
         Integer anciennete;
         LocalDate dateActuelle = new LocalDate();
         Integer anneeDEmbauche = dateEmbauche.getYear();
         anciennete = dateActuelle.getYear()-anneeDEmbauche;
 
-        return anciennete;
+        return anciennete
+        */
+        return new LocalDate().getYear()-dateEmbauche.getYear();
     }
 
     public Integer getNbConges()
@@ -56,6 +59,26 @@ public class Employe
                 ", salaire="+ this.salaire+"}";
     }
 
+    public boolean equals(Employe employe)
+    {
+        boolean result = false;
+        if (employe.toString().equals(this.toString()))
+        {
+            result = true;
+        }
+        /*
+        if(     employe.nom.equals(this.nom)
+                && employe.prenom.equals(this.prenom)
+                && employe.matricule.equals(this.matricule)
+                && employe.dateEmbauche.toString().equals(this.dateEmbauche.toString())
+                && employe.salaire.equals(this.salaire)  )
+        {
+            result = true;
+        }
+        */
+
+        return result;
+    }
 
     public String getNom() {
         return nom;
