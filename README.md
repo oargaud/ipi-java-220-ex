@@ -8,9 +8,9 @@ Pour les exécuter, clic droit sur la classe `EntrepriseTest` :
 - IntelliJ : => Run EntrepriseTest 
 - Eclipse : => Run As => Junit Test
 
-# Exercice 0 : Entreprise
+# Exercice 0 : com.ipiecoles.java.java220.Entreprise
 
-## 001 : Déclarer au niveau de la classe `Entreprise` les constantes de classe suivantes
+## 001 : Déclarer au niveau de la classe `com.ipiecoles.java.java220.Entreprise` les constantes de classe suivantes
 
 - `SALAIRE_BASE` de type `Double` et de valeur 1480.27
 - `NB_CONGES_BASE` de type `Integer` et de valeur 25
@@ -18,7 +18,7 @@ Pour les exécuter, clic droit sur la classe `EntrepriseTest` :
 - `PRIME_MANAGER_PAR_TECHNICIEN` de type `Double` et de valeur 250
 - `PRIME_ANCIENNETE` de type `Double` et de valeur 100
 
-## 002 : Déclarer au niveau de la classe `Entreprise`, une méthode `primeAnnuelleBase`, publique et statique calculant la prime de base pour tous les employés de l'entreprise de la manière suivante :
+## 002 : Déclarer au niveau de la classe `com.ipiecoles.java.java220.Entreprise`, une méthode `primeAnnuelleBase`, publique et statique calculant la prime de base pour tous les employés de l'entreprise de la manière suivante :
 
 Utiliser la classe `LocalDate` (de **joda time**, attention aux imports) pour obtenir l'année courante.
 Prime = 50% de l'année en cours. Ex : 2017 : 2017 / 2 = 1008.5
@@ -41,7 +41,7 @@ Faire en sorte qu'elle ne puisse être redéfinie dans d'éventuelles sous-class
 
 ## 104 : Modifier le setter de `dateEmbauche` pour lever une `Exception` avec le message `"La date d'embauche ne peut être postérieure à la date courante"` lorsque la date d'embauche est postérieure à la date courante
 
-## 105 : Développer une méthode `getNbConges` retournant la constante de classe `NB_CONGES_BASE` de la classe `Entreprise`
+## 105 : Développer une méthode `getNbConges` retournant la constante de classe `NB_CONGES_BASE` de la classe `com.ipiecoles.java.java220.Entreprise`
 
 ## 106 : Redéfinir la méthode `toString` (héritée d'`Object`) pour afficher un employé de la manière suivante :
 
@@ -55,7 +55,7 @@ Faire en sorte qu'elle ne puisse être redéfinie dans d'éventuelles sous-class
 
 Ex : un salaire de 500.0, avec une augmentation de 0.50, cela donne un salaire de 750.0
 
-## 110 : Déclarer dans la classe `Employe` une méthode `getPrimeAnnuelle` retournant la prime annuelle de base définie dans la classe `Entreprise`
+## 110 : Déclarer dans la classe `Employe` une méthode `getPrimeAnnuelle` retournant la prime annuelle de base définie dans la classe `com.ipiecoles.java.java220.Entreprise`
 
 # Exercice 2 : Commercial
 
@@ -120,9 +120,9 @@ Ex : Grade 3 : 30% d'augmentation : 1000.0 de salaire avec grade 1 : 1100.0
 
 ## 503 : Ajouter une méthode `ajoutTechnicienEquipe` qui prend en paramètre un technicien et qui l'ajoute dans l'équipe
 
-## 504 : Redéfinir le setter de l'attribut salaire pour qu'il renvoie la valeur du salaire multipliée par l'indice manager (`Entreprise.INDICE_MANAGER`, auquel on ajoute 10% (sur le salaire passé en paramètre) par membre d'équipe
+## 504 : Redéfinir le setter de l'attribut salaire pour qu'il renvoie la valeur du salaire multipliée par l'indice manager (`com.ipiecoles.java.java220.Entreprise.INDICE_MANAGER`, auquel on ajoute 10% (sur le salaire passé en paramètre) par membre d'équipe
 
-## 505 : Modifier le code de la méthode `getPrimeAnnuelle` pour qu'elle renvoie la prime de base, à laquelle on ajoute la prime du manager en fonction du nombre de membres de son équipe (en utilisant `Entreprise.PRIME_MANAGER_PAR_TECHNICIEN`)
+## 505 : Modifier le code de la méthode `getPrimeAnnuelle` pour qu'elle renvoie la prime de base, à laquelle on ajoute la prime du manager en fonction du nombre de membres de son équipe (en utilisant `com.ipiecoles.java.java220.Entreprise.PRIME_MANAGER_PAR_TECHNICIEN`)
 
 ## 506 : Ajoutée une méthode interne `augmenterSalaireEquipe` qui augmente le salaire de tous les membres de l'équipe d'un manager par un pourcentage (`Double`) avec la méthode précédemment définie dans `Employe`
 

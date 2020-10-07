@@ -22,33 +22,33 @@ public class EntrepriseTest {
 
 	@Test
 	public void exo001ConstantesClasse() throws Exception {
-		//Déclarer au niveau de la classe Entreprise les constantes de classe suivantes
+		//Déclarer au niveau de la classe com.ipiecoles.java.java220.Entreprise les constantes de classe suivantes
 		//                     							   NOM CONSTANTE                    TYPE (sans .class)  Valeur
-		TestUtils.checkStaticFinalField("Entreprise", "SALAIRE_BASE", 					TestUtils.DOUBLE, 		1480.27);
-		TestUtils.checkStaticFinalField("Entreprise", "NB_CONGES_BASE", 				TestUtils.INTEGER, 		25);
-		TestUtils.checkStaticFinalField("Entreprise", "INDICE_MANAGER", 				TestUtils.DOUBLE, 		1.3);
-		TestUtils.checkStaticFinalField("Entreprise", "PRIME_MANAGER_PAR_TECHNICIEN", 	TestUtils.DOUBLE, 		250.0);
-		TestUtils.checkStaticFinalField("Entreprise", "PRIME_ANCIENNETE", 				TestUtils.DOUBLE, 		100.0);
+		TestUtils.checkStaticFinalField("com.ipiecoles.java.java220.Entreprise", "SALAIRE_BASE", 					TestUtils.DOUBLE, 		1480.27);
+		TestUtils.checkStaticFinalField("com.ipiecoles.java.java220.Entreprise", "NB_CONGES_BASE", 				TestUtils.INTEGER, 		25);
+		TestUtils.checkStaticFinalField("com.ipiecoles.java.java220.Entreprise", "INDICE_MANAGER", 				TestUtils.DOUBLE, 		1.3);
+		TestUtils.checkStaticFinalField("com.ipiecoles.java.java220.Entreprise", "PRIME_MANAGER_PAR_TECHNICIEN", 	TestUtils.DOUBLE, 		250.0);
+		TestUtils.checkStaticFinalField("com.ipiecoles.java.java220.Entreprise", "PRIME_ANCIENNETE", 				TestUtils.DOUBLE, 		100.0);
 	}
 
 	@Test
 	public void exo002PrimeAnnuelleBase() throws Exception {
-		//Déclarer au niveau de la classe Entreprise, une méthode primeAnnuelleBase, publique et statique
+		//Déclarer au niveau de la classe com.ipiecoles.java.java220.Entreprise, une méthode primeAnnuelleBase, publique et statique
 		//calculant la prime de base pour tous les employés de l'entreprise de la manière suivante :
 		//Utiliser la classe LocalDate pour obtenir l'année courante.
 		//
 		//Prime = 50% de l'année en cours. Ex : 2017 : 2017 / 2 = 1008.5
 
-		TestUtils.checkStaticMethod("Entreprise", "primeAnnuelleBase", TestUtils.DOUBLE, 0);
+		TestUtils.checkStaticMethod("com.ipiecoles.java.java220.Entreprise", "primeAnnuelleBase", TestUtils.DOUBLE, 0);
 
 		DateTime d = new DateTime(2017,2,5,1,1);
 		DateTimeUtils.setCurrentMillisFixed(d.getMillis());
-		Object resultat = TestUtils.callMethod("Entreprise", "primeAnnuelleBase");
+		Object resultat = TestUtils.callMethod("com.ipiecoles.java.java220.Entreprise", "primeAnnuelleBase");
 		Assertions.assertThat(resultat).isEqualTo(1008.5);
 
 		DateTimeUtils.setCurrentMillisFixed(0L);
 
-		resultat = TestUtils.callMethod("Entreprise", "primeAnnuelleBase");
+		resultat = TestUtils.callMethod("com.ipiecoles.java.java220.Entreprise", "primeAnnuelleBase");
 		Assertions.assertThat(resultat).isEqualTo(985.0);
 	}
 
@@ -79,11 +79,11 @@ public class EntrepriseTest {
 
 
 		//Décommenter tout le code ci-dessous une fois les développements effectués et analyser les 4 dernières lignes
-		/*Technicien t1 = new Technicien("Roussel", "Clémence", "000T01", new LocalDate(), Entreprise.SALAIRE_BASE, 1);
-		Technicien t2 = new Technicien("Chevalier", "Lucie", "000T02", new LocalDate(), Entreprise.SALAIRE_BASE, 2);
-		Technicien t3 = new Technicien("Brunet", "Tom", "000T03", new LocalDate(), Entreprise.SALAIRE_BASE, 3);
-		Technicien t4 = new Technicien("Leroux", "Louise", "000T04", new LocalDate(), Entreprise.SALAIRE_BASE, 4);
-		Technicien t5 = new Technicien("Noa", "Philippe", "000T05", new LocalDate(), Entreprise.SALAIRE_BASE, 5);
+		/*Technicien t1 = new Technicien("Roussel", "Clémence", "000T01", new LocalDate(), com.ipiecoles.java.java220.Entreprise.SALAIRE_BASE, 1);
+		Technicien t2 = new Technicien("Chevalier", "Lucie", "000T02", new LocalDate(), com.ipiecoles.java.java220.Entreprise.SALAIRE_BASE, 2);
+		Technicien t3 = new Technicien("Brunet", "Tom", "000T03", new LocalDate(), com.ipiecoles.java.java220.Entreprise.SALAIRE_BASE, 3);
+		Technicien t4 = new Technicien("Leroux", "Louise", "000T04", new LocalDate(), com.ipiecoles.java.java220.Entreprise.SALAIRE_BASE, 4);
+		Technicien t5 = new Technicien("Noa", "Philippe", "000T05", new LocalDate(), com.ipiecoles.java.java220.Entreprise.SALAIRE_BASE, 5);
 
 		Unite<Technicien> employeEquipeT1 = new Unite<>(t1);
 		employeEquipeT1.ajouterMembre(t2);
@@ -91,15 +91,15 @@ public class EntrepriseTest {
 		Unite<Technicien> employeEquipeT2 = new Unite<>(t3);
 		employeEquipeT1.ajouterMembre(t4, t5);
 
-		Manager m1 = new Manager("Gaillard", "Victor", "000M01", new LocalDate(), Entreprise.SALAIRE_BASE, employeEquipeT1.getMembres());
-		Manager m2 = new Manager("Lambert", "Arthur", "000M02", new LocalDate(), Entreprise.SALAIRE_BASE, employeEquipeT2.getMembres());
+		Manager m1 = new Manager("Gaillard", "Victor", "000M01", new LocalDate(), com.ipiecoles.java.java220.Entreprise.SALAIRE_BASE, employeEquipeT1.getMembres());
+		Manager m2 = new Manager("Lambert", "Arthur", "000M02", new LocalDate(), com.ipiecoles.java.java220.Entreprise.SALAIRE_BASE, employeEquipeT2.getMembres());
 
 		Unite<Manager> employeEquipeM1 = new Unite<>(m1);
 		employeEquipeM1.ajouterMembre(m2);
 
-		Commercial c1 = new Commercial("Schneider", "Ines", "000C01", new LocalDate(), Entreprise.SALAIRE_BASE, 10000.0);
-		Commercial c2 = new Commercial("Bourgeois", "Lisa", "000C02", new LocalDate(), Entreprise.SALAIRE_BASE, 20000.0);
-		Commercial c3 = new Commercial("Renard", "Noah", "000C03", new LocalDate(), Entreprise.SALAIRE_BASE, 30000.0);
+		Commercial c1 = new Commercial("Schneider", "Ines", "000C01", new LocalDate(), com.ipiecoles.java.java220.Entreprise.SALAIRE_BASE, 10000.0);
+		Commercial c2 = new Commercial("Bourgeois", "Lisa", "000C02", new LocalDate(), com.ipiecoles.java.java220.Entreprise.SALAIRE_BASE, 20000.0);
+		Commercial c3 = new Commercial("Renard", "Noah", "000C03", new LocalDate(), com.ipiecoles.java.java220.Entreprise.SALAIRE_BASE, 30000.0);
 
 		Unite<Commercial> employeEquipeC1 = new Unite<>(c1);
 		employeEquipeC1.ajouterMembre(c2, c3);
@@ -119,7 +119,7 @@ public class EntrepriseTest {
 	class Derived extends Employe {
 		//A decommenter quand le constructeur avec les 5 arguments est codé
 		public Derived(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-			//super(nom, prenom, matricule, dateEmbauche, salaire);
+			super(nom, prenom, matricule, dateEmbauche, salaire);
 		}
 
 		public Derived() {
@@ -232,7 +232,7 @@ public class EntrepriseTest {
 
 	@Test
 	public void exo105TestGetNbConges() throws Exception {
-		//Développer une méthode getNbConges retournant la constante de classe NB_CONGES_BASE de la classe Entreprise
+		//Développer une méthode getNbConges retournant la constante de classe NB_CONGES_BASE de la classe com.ipiecoles.java.java220.Entreprise
 
 		TestUtils.checkMethod("Employe", "getNbConges", TestUtils.INTEGER);
 
@@ -538,7 +538,7 @@ public class EntrepriseTest {
 		Object d = TestUtils.getClasse("Technicien").getConstructor().newInstance();
 		try {
 			TestUtils.invokeSetter(d, "dateEmbauche", LocalDate.now());
-			Assertions.assertThat(TestUtils.callMethod(d, "getNbConges")).isEqualTo(TestUtils.getStaticFinalField("Entreprise", "NB_CONGES_BASE"));
+			Assertions.assertThat(TestUtils.callMethod(d, "getNbConges")).isEqualTo(TestUtils.getStaticFinalField("com.ipiecoles.java.java220.Entreprise", "NB_CONGES_BASE"));
 		}
 		catch(Exception technicienException){
 			Assertions.fail("L'affectation n'aurait pas du lancer une exception");
@@ -546,7 +546,7 @@ public class EntrepriseTest {
 
 		try {
 			TestUtils.invokeSetter(d, "dateEmbauche", LocalDate.now().minusYears(4));
-			Assertions.assertThat(TestUtils.callMethod(d, "getNbConges")).isEqualTo((Integer)TestUtils.getStaticFinalField("Entreprise", "NB_CONGES_BASE") + 4);
+			Assertions.assertThat(TestUtils.callMethod(d, "getNbConges")).isEqualTo((Integer)TestUtils.getStaticFinalField("com.ipiecoles.java.java220.Entreprise", "NB_CONGES_BASE") + 4);
 		}
 		catch(Exception technicienException){
 			Assertions.fail("L'affectation n'aurait pas du lancer une exception");
@@ -688,7 +688,7 @@ public class EntrepriseTest {
 	public void exo505GetPrimeAnnuelle() throws Exception {
 		//Modifier le code de la méthode getPrimeAnnuelle pour qu'elle renvoie la prime de base, à laquelle on ajoute
 		//la prime du manager en fonction du nombre de membres
-		//de son équipe (en utilisant Entreprise.PRIME_MANAGER_PAR_TECHNICIEN)
+		//de son équipe (en utilisant com.ipiecoles.java.java220.Entreprise.PRIME_MANAGER_PAR_TECHNICIEN)
 		Object d = TestUtils.getClasse("Manager").getConstructor().newInstance();
 		DateTime da = new DateTime(2017,2,5,1,1);
 		DateTimeUtils.setCurrentMillisFixed(da.getMillis());
