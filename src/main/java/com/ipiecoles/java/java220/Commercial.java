@@ -11,6 +11,11 @@ public class Commercial extends Employe
     private Integer performance;
 
 
+    public Commercial()
+    {
+
+    }
+
     public Commercial(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire,Double caAnnuel)
     {
         super( nom, prenom, matricule, dateEmbauche, salaire);
