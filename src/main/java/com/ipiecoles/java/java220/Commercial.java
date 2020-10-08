@@ -67,27 +67,44 @@ public class Commercial extends Employe
         return performance.equals(niveauPerformance);
     }
 
+    public Note equivalenceNote()
+    {
+        switch (performance)
+        {
+            case 0 :
+            case 50:
+            {
+                return Note.INSUFFISANT;
+            }
+            case 100:
+            {
+                return Note.PASSABLE;
+            }
+            case 150:
+            {
+                return Note.BIEN;
+            }
+            case 200:
+            {
+                return Note.TRES_BIEN;
+            }
+            default:
+            {
+                return null;
+            }
+        }
+    }
+    /*
     public void equivalenceNote()
     {
         switch (performance)
         {
-            case 0:
-            {
-                this.note = Note.INSUFFISANT;
-                break;
-            }
+            case 0 :
             case 50:
             {
                 this.note = Note.INSUFFISANT;
                 break;
             }
-            /*
-            case 58:
-            {
-                this.note = Note.INSUFFISANT;
-                break;
-            }
-            */
             case 100:
             {
                 this.note = Note.PASSABLE;
@@ -112,7 +129,7 @@ public class Commercial extends Employe
 
 
     }
-
+    */
 
 
 

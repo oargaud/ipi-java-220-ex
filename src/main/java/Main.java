@@ -1,5 +1,6 @@
 import com.ipiecoles.java.java220.Commercial;
 import com.ipiecoles.java.java220.Employe;
+import com.ipiecoles.java.java220.Technicien;
 import org.joda.time.LocalDate;
 
 public class Main
@@ -46,6 +47,12 @@ public class Main
         System.out.println("Note com5 "+commercial5.getNote());
         System.out.println("Note com6 "+commercial6.getNote());
 
+
+
+
+        Technicien t3= new Technicien("TITI","toto","23456",time,1500d,3);
+        //t3.getPrimeAnnuelle();
+        System.out.println("prime annuelle t3 "+t3.getPrimeAnnuelle());
     }
 
 }

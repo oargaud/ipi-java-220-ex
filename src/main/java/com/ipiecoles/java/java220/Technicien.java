@@ -29,8 +29,26 @@ public class Technicien extends Employe
     @Override
     public void setSalaire(Double salaire)
     {
-        this.salaire = salaire+salaire*grade/10;
+        super.setSalaire(salaire+salaire*grade/10); ;
     }
+
+    @Override
+    public Integer getNbConges()
+    {
+        return super.getNbConges()+getNombreAnneeAnciennete();
+    }
+
+    @Override
+    public Double getPrimeAnnuelle()
+    {
+        Double primeDeBase = Entreprise.primeAnnuelleBase();
+        Double primeMajore = primeDeBase*(1+(grade*10d)/100);
+        Double primeAnciennete = Entreprise.PRIME_ANCIENNETE*this.getNombreAnneeAnciennete();
+        return primeMajore+primeAnciennete;
+    }
+
+
+
 
     public Integer getGrade()
     {

@@ -16,7 +16,7 @@ public class Employe
     private String prenom ;
     private String matricule ;
     private LocalDate dateEmbauche;
-    protected Double salaire ;
+    private Double salaire ;
 
     public Employe()
     {
@@ -108,10 +108,15 @@ public class Employe
     }
 */
 
-
+    /**
+     * Augmente le salaire du pourcentage renseigné
+     * Ex : salaire 1000 percAugmentation 0.05 -> 1050
+     *
+     * @param percAugmentation percAugmentation est un double non null strictement positif
+     */
     public void augmenterSalaire(Double percAugmentation)
     {
-        salaire = salaire*(1+percAugmentation);
+        this.salaire = this.salaire*(1+percAugmentation);
 
     }
 
