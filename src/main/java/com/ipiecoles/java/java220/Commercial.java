@@ -132,7 +132,15 @@ public class Commercial extends Employe
     }
     */
 
-
+    @Override
+    public String toString()
+    {
+        return "Commercial{" +
+                "caAnnuel=" + caAnnuel +
+                ", performance=" + performance +
+                ", note=" + note +
+                "} " + super.toString();
+    }
 
     public Note getNote() {
         return note;

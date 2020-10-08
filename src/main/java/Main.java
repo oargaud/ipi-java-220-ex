@@ -3,6 +3,8 @@ import com.ipiecoles.java.java220.Employe;
 import com.ipiecoles.java.java220.Technicien;
 import org.joda.time.LocalDate;
 
+import java.util.ArrayList;
+
 public class Main
 {
 
@@ -53,6 +55,26 @@ public class Main
         Technicien t3= new Technicien("TITI","toto","23456",time,1500d,3);
         //t3.getPrimeAnnuelle();
         System.out.println("prime annuelle t3 "+t3.getPrimeAnnuelle());
+
+
+
+
+
+        Commercial commercial = new Commercial("TOTO","toto","12345",time,2500d,1000000d,58);
+        Technicien technicien= new Technicien("TITI","titi","23456",LocalDate.now().minusYears(10),2500d,4);
+
+
+        ArrayList<Employe>employes = new ArrayList<>();
+        employes.add(commercial);
+        employes.add(technicien);
+
+        for (Employe e:employes)
+        {
+            System.out.println("Prime : "+e.getPrimeAnnuelle()+" nb de congés "+e.getNbConges());
+        }
+
+
+
     }
 
 }

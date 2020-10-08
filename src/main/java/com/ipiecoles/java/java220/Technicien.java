@@ -47,13 +47,40 @@ public class Technicien extends Employe
         Double primeMajore = primeDeBase*(1+(grade*10d)/100);
         Double primeAnciennete = Entreprise.PRIME_ANCIENNETE*this.getNombreAnneeAnciennete();
         return primeMajore+primeAnciennete;
+        // maniere plus concise et plus propre petit bug pour le moment
+        //return super.getPrimeAnnuelle()*(1+(grade/10d))+Entreprise.PRIME_ANCIENNETE*this.getNombreAnneeAnciennete();
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Technicien{" +
+                "grade=" + grade +
+                "} " + super.toString();
     }
 
     @Override
     public int hashCode()
     {
+        return Objects.hash(super.hashCode(), grade); // mieux car si Employe evolue le Hash suivra
+    }
 
-        return Objects.hash(getNom(), getPrenom(), getMatricule(), getDateEmbauche(), getSalaire(),grade);
+    /*
+        @Override
+        public int hashCode()
+        {
+
+            return Objects.hash(getNom(), getPrenom(), getMatricule(), getDateEmbauche(), getSalaire(),grade);
+        }
+    */
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Technicien that = (Technicien) o;
+        return Objects.equals(grade, that.grade);
     }
 
     public Integer getGrade()

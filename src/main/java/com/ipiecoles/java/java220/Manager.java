@@ -1,5 +1,7 @@
 package com.ipiecoles.java.java220;
 
+import org.joda.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -13,6 +15,11 @@ public class Manager extends Employe
     public void ajoutTechnicienEquipe(Technicien technicien)
     {
         getEquipe().add(technicien);
+    }
+
+    public void ajoutTechnicienEquipe(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Integer grade)
+    {
+        getEquipe().add(new Technicien( nom,  prenom,  matricule,  dateEmbauche,  salaire, grade));
     }
 
 
@@ -49,6 +56,25 @@ public class Manager extends Employe
         super.augmenterSalaire(percAugmentation);
     }
 
+
+    /*
+    public HashSet equipeParGrade()
+    {
+        HashSet listeTrie = new HashSet();
+        for (Technicien t :equipe)
+        {
+
+        }
+    }
+    */
+
+
+
+
+
+
+
+
     public HashSet<Technicien> getEquipe()
     {
         return equipe;
@@ -58,4 +84,9 @@ public class Manager extends Employe
     {
         this.equipe = equipe;
     }
+
+
+
+
+
 }
