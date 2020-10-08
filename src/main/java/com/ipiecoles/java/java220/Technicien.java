@@ -2,6 +2,8 @@ package com.ipiecoles.java.java220;
 
 import org.joda.time.LocalDate;
 
+import java.util.Objects;
+
 public class Technicien extends Employe
 {
     private Integer grade;
@@ -47,8 +49,12 @@ public class Technicien extends Employe
         return primeMajore+primeAnciennete;
     }
 
+    @Override
+    public int hashCode()
+    {
 
-
+        return Objects.hash(getNom(), getPrenom(), getMatricule(), getDateEmbauche(), getSalaire(),grade);
+    }
 
     public Integer getGrade()
     {

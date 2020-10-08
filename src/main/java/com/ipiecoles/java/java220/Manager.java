@@ -25,12 +25,29 @@ public class Manager extends Employe
     @Override
     public Double getPrimeAnnuelle()
     {
-        Double prime = Entreprise.primeAnnuelleBase()+Entreprise.PRIME_MANAGER_PAR_TECHNICIEN*equipe.size();
+        Double prime = Entreprise.primeAnnuelleBase()+equipe.size()*Entreprise.PRIME_MANAGER_PAR_TECHNICIEN;
 
         return prime;
     }
 
+    private void augmenterSalaireEquipe (Double percAugmentation)
+    {
+        if(equipe.size()!=0)
+        {
+            for (Technicien t :equipe)
+            {
+                t.augmenterSalaire(percAugmentation);
+            }
+        }
 
+    }
+
+    @Override
+    public void augmenterSalaire(Double percAugmentation)
+    {
+        augmenterSalaireEquipe(percAugmentation);
+        super.augmenterSalaire(percAugmentation);
+    }
 
     public HashSet<Technicien> getEquipe()
     {

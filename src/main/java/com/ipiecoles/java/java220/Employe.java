@@ -51,7 +51,7 @@ public class Employe
 
         return Entreprise.NB_CONGES_BASE;
     }
-
+    /*
     public String toString()
     {
         return "Employe{nom='"+this.nom+
@@ -59,6 +59,19 @@ public class Employe
                 "', matricule='"+this.matricule+
                 "', dateEmbauche="+this.dateEmbauche.toString()+
                 ", salaire="+ this.salaire+"}";
+    }
+    */
+
+    @Override
+    public String toString()
+    {
+        return "Employe{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", matricule='" + matricule + '\'' +
+                ", dateEmbauche=" + dateEmbauche +
+                ", salaire=" + salaire +
+                '}';
     }
 
     @Override

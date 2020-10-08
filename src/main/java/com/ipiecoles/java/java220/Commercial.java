@@ -25,8 +25,9 @@ public class Commercial extends Employe
 
     public Commercial(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire,Double caAnnuel,Integer performance)
     {
-        super( nom, prenom, matricule, dateEmbauche, salaire);
-        this.caAnnuel = caAnnuel;
+        //super( nom, prenom, matricule, dateEmbauche, salaire);
+        //this.caAnnuel = caAnnuel;
+        this( nom, prenom, matricule, dateEmbauche, salaire,caAnnuel);
         this.performance = performance;
     }
 
@@ -41,7 +42,7 @@ public class Commercial extends Employe
         {
             return false;
         }
-        if (!super.equals(o))
+        if (!super.equals(o))   // delegue le control des champs propre a Employe au super de la classe mere
         {
             return false;
         }
