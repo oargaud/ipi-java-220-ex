@@ -9,7 +9,7 @@ public class Commercial extends Employe
 
     private Double caAnnuel;
     private Integer performance;
-
+    private Note note;
 
     public Commercial()
     {
@@ -67,7 +67,62 @@ public class Commercial extends Employe
         return performance.equals(niveauPerformance);
     }
 
+    public void equivalenceNote()
+    {
+        switch (performance)
+        {
+            case 0:
+            {
+                this.note = Note.INSUFFISANT;
+                break;
+            }
+            case 50:
+            {
+                this.note = Note.INSUFFISANT;
+                break;
+            }
+            /*
+            case 58:
+            {
+                this.note = Note.INSUFFISANT;
+                break;
+            }
+            */
+            case 100:
+            {
+                this.note = Note.PASSABLE;
+                break;
+            }
+            case 150:
+            {
+                this.note = Note.BIEN;
+                break;
+            }
+            case 200:
+            {
+                this.note = Note.TRES_BIEN;
+                break;
+            }
+            default:
+            {
+                this.note = null;
+                break;
+            }
+        }
 
+
+    }
+
+
+
+
+    public Note getNote() {
+        return note;
+    }
+
+    public void setNote(Note note) {
+        this.note = note;
+    }
 
     public Integer getPerformance() {
         return performance;

@@ -16,7 +16,7 @@ public class Employe
     private String prenom ;
     private String matricule ;
     private LocalDate dateEmbauche;
-    private Double salaire ;
+    protected Double salaire ;
 
     public Employe()
     {
