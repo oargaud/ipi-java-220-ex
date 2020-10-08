@@ -2,6 +2,8 @@ package com.ipiecoles.java.java220;
 
 import org.joda.time.LocalDate;
 
+import java.util.Objects;
+
 /**
  * Created by pjvilloud on 21/09/17.
  */
@@ -59,26 +61,65 @@ public class Employe
                 ", salaire="+ this.salaire+"}";
     }
 
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o)
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass())
+        {
+            return false;
+        }
+        Employe employe = (Employe) o;
+        return Objects.equals(nom, employe.nom) &&
+                Objects.equals(prenom, employe.prenom) &&
+                Objects.equals(matricule, employe.matricule) &&
+                Objects.equals(dateEmbauche, employe.dateEmbauche) &&
+                Objects.equals(salaire, employe.salaire);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(nom, prenom, matricule, dateEmbauche, salaire);
+    }
+
+/*
     public boolean equals(Employe employe)
     {
         boolean result = false;
-        if (employe.toString().equals(this.toString()))
+        if (employe!=null)
         {
-            result = true;
+            System.out.println("date employe "+employe.getDateEmbauche().toString()+" date cet employe "+this.dateEmbauche.toString());
+            if(     employe.getNom().equals(this.nom)
+                    && employe.getPrenom().equals(this.prenom)
+                    && employe.getMatricule().equals(this.matricule)
+                    && employe.getDateEmbauche().isEqual(this.dateEmbauche)
+                    && employe.getSalaire().equals(this.salaire)  )
+            {
+                result = true;
+            }
         }
-        /*
-        if(     employe.nom.equals(this.nom)
-                && employe.prenom.equals(this.prenom)
-                && employe.matricule.equals(this.matricule)
-                && employe.dateEmbauche.toString().equals(this.dateEmbauche.toString())
-                && employe.salaire.equals(this.salaire)  )
-        {
-            result = true;
-        }
-        */
+
 
         return result;
     }
+*/
+
+
+    public void augmenterSalaire(Double percAugmentation)
+    {
+        salaire = salaire*(1+percAugmentation);
+
+    }
+
+    public Double getPrimeAnnuelle()
+    {
+        return Entreprise.PRIME_ANCIENNETE;
+    }
+
 
     public String getNom() {
         return nom;
@@ -108,7 +149,8 @@ public class Employe
         return dateEmbauche;
     }
 
-    public void setDateEmbauche(LocalDate dateEmbauche) throws Exception {
+    public void setDateEmbauche(LocalDate dateEmbauche) throws Exception
+    {
         if(dateEmbauche!=null && dateEmbauche.isAfter(LocalDate.now()))
         {
             throw new Exception ("La date d'embauche ne peut être postérieure à la date courante");
