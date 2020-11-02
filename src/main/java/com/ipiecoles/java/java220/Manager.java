@@ -2,6 +2,8 @@ package com.ipiecoles.java.java220;
 
 import org.joda.time.LocalDate;
 
+import java.io.FileOutputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -57,17 +59,34 @@ public class Manager extends Employe
     }
 
 
-    /*
-    public HashSet equipeParGrade()
+
+    public ArrayList<Technicien> equipeParGrade()
     {
-        HashSet listeTrie = new HashSet();
+        ArrayList<Technicien> list = new ArrayList<Technicien>();
+
         for (Technicien t :equipe)
         {
-
+            list.add(t);
         }
-    }
-    */
+        list.sort(Technicien::compareTo);
 
+        return list;
+    }
+
+    public Double salaireEquipeGrade1()
+    {
+        Double total = 0d;
+
+        for (Technicien t :equipe)
+        {
+            if(t.getGrade()==1)
+            {
+                total+=t.getSalaire();
+            }
+        }
+
+        return total;
+    }
 
 
 

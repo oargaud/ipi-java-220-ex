@@ -1,6 +1,6 @@
 package com.ipiecoles.java.java220;
 
-public interface Comparable//<T>
+public interface Comparable
 {
-    //public int compareTo(T o);
+    public int compareTo(Technicien technicien);
 }

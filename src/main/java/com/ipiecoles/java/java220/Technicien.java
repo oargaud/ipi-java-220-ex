@@ -94,5 +94,9 @@ public class Technicien extends Employe implements Comparable
     }
 
 
-
+    @Override
+    public int compareTo(Technicien technicien)
+    {
+        return this.grade-technicien.grade;
+    }
 }
