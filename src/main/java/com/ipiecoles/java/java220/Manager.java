@@ -23,6 +23,8 @@ public class Manager extends Employe
     public void ajoutTechnicienEquipe(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Integer grade)
     {
         getEquipe().add(new Technicien( nom,  prenom,  matricule,  dateEmbauche,  salaire, grade));
+        //ajoutTechnicienEquipe(new Technicien( nom,  prenom,  matricule,  dateEmbauche,  salaire, grade));
+        // meilleur method car si il y a code specifique dans la fonction ajoutTechnicienEquipe de base on le recupere
     }
 
 
