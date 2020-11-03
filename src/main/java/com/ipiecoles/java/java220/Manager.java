@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Objects;
 
 public class Manager extends Employe
 {
@@ -23,6 +24,7 @@ public class Manager extends Employe
     {
         getEquipe().add(new Technicien( nom,  prenom,  matricule,  dateEmbauche,  salaire, grade));
     }
+
 
 
     @Override
@@ -73,6 +75,13 @@ public class Manager extends Employe
         return list;
     }
 
+
+
+//    public List<Technicien> equipeParGrade(){
+//        return equipe.stream().sorted(Technicien::compareTo).collect(Collectors.toList());
+//    }
+
+
     public Double salaireEquipeGrade1()
     {
         Double total = 0d;
@@ -88,7 +97,9 @@ public class Manager extends Employe
         return total;
     }
 
-
+//    public double salaireEquipeGrade1(){
+//        return equipe.stream().filter(t -> t.getGrade().equals(1)).mapToDouble(Technicien::getSalaire).sum();
+//    }
 
 
 
@@ -106,6 +117,24 @@ public class Manager extends Employe
 
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Manager manager = (Manager) o;
+        return Objects.equals(equipe, manager.equipe);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), equipe);
+    }
 
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "equipe=" + equipe +
+                "} " + super.toString();
+    }
 }

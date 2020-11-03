@@ -168,5 +168,8 @@ public class Commercial extends Employe
         this.caAnnuel = caAnnuel;
     }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), caAnnuel, performance, note);
+    }
 }
